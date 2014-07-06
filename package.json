@@ -1,0 +1,16 @@
+{
+  "name": "chech-lajan",
+  "version": "0.0.1",
+  "private": true,
+  "author": {
+    "name": "leny",
+    "email": "info@flatland.be",
+    "url": "http://leny.me"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/HEPL-RIA/chech-lajan.git"
+  },
+  "devDependencies": {},
+  "dependencies": {}
+}
