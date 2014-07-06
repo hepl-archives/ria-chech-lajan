@@ -1,8 +1,8 @@
 # Chèch Lajan : CDC
 
-**Chèch Lajan** part d'un constat simple : on ne sait jamais vraiment où se trouvele distributeur de billets le plus proche.
+**Chèch Lajan** part d'un constat simple : on ne sait jamais vraiment où se trouve le distributeur de billets le plus proche.
 
-Avec l'avénement des smartphones, il serait chouette d'avoir à notre disposition un service qui puisse nous indiquer les distributeurs de billets autour de nous.
+Avec l'avénement des smartphones, il serait chouette d'avoir à notre disposition un service qui puisse nous indiquer les distributeurs de billets autour de nous, quelle qu'en soit la banque.
 
 ## Objectifs
 
