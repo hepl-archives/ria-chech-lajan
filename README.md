@@ -23,9 +23,12 @@ Avant de commencer notre travail, la seule chose à faire de votre côté sera d
 
 ## Programme du cours
 
-### Séance 1 : Présentation du projet Chèch Lajan, analyse, planification & présentation des outils
+### Séance 1 : Présentation du projet Chèch Lajan, analyse du CDC, planification & présentation des outils
 
-_(TODO)_
+Bien que nous allons travailler tout ensemble, sous forme de "travaux dirigés", nous allons essayer de conduire ce projet comme un véritable projet client.  
+Nous allons donc partir d'un cahier des charges (ou *CDC*), que nous allons analyser afin de planifier notre travail sur le projet.
+
+Une fois que nous aurons décidé de la marche à suivre, je vous présenterai les outils qui nous aideront à mettre en place notre workflow pour ce projet.
 
 ### Séances 2, 3 & 4 : Réalisation du code serveur (API REST)
 
