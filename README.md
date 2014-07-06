@@ -18,10 +18,8 @@ Avant de commencer notre travail, la seule chose à faire de votre côté sera d
 
 ### Contenu du dépôt
 
-Le dépôt contient deux branches : **master** & **dev**. La branche master contiendra notre travail cours après cours, (et cette même branche sur votre *fork* représentera votre avancée).  
-La branche dev est la branche que j'utilise de mon côté pour préparer le cours. 
-
-À chaque fin de scéance, je mettrai un "*tag*" sur la branche master, qui contiendra le code tel que terminé au cours. À vous de vous assurer que votre code reflète les mêmes avancées pour la séance suivante.
+À chaque fin de séance, je mettrai un "*tag*" sur le repo, qui représentera le code tel que terminé au cours.  
+À vous de vous assurer que votre code reflète les mêmes avancées pour la séance suivante.
 
 ## Programme du cours
 
