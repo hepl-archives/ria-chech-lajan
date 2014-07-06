@@ -12,8 +12,6 @@
     - name: Locales | reconfigure
       command: dpkg-reconfigure locales
 
-    # TODO: nginx
-
     - name: MongoDB | Install ppa key
       apt_key: id=7F0CEB10 url=http://keyserver.ubuntu.com:11371/pks/lookup?op=get&search=0x9ECBEC467F0CEB10 state=present
     - name: MongoDB | Install ppa
@@ -36,5 +34,10 @@
     - name: node.js | Install package
       apt: name=nodejs state=latest
     - npm: name=grunt-cli global=yes
-
     - npm: path=/vagrant
+    - name: nginx | Install package
+      apt: name=nginx-extras state=latest
+    - copy: src="nginx.conf" dest="/etc/nginx.conf"
+    - copy: src="default-host.conf" dest="/etc/nginx/sites-available/default"
+    - name: nginx | Check service daemon
+      service: name=nginx state=started
