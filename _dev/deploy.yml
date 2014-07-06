@@ -35,9 +35,17 @@
       apt: name=nodejs state=latest
     - npm: name=grunt-cli global=yes
     - npm: path=/vagrant
+
     - name: nginx | Install package
       apt: name=nginx-extras state=latest
     - copy: src="nginx.conf" dest="/etc/nginx.conf"
     - copy: src="default-host.conf" dest="/etc/nginx/sites-available/default"
     - name: nginx | Check service daemon
       service: name=nginx state=started
+
+    - lineinfile: dest=/home/vagrant/.bashrc line="alias c='clear'"
+    - lineinfile: dest=/home/vagrant/.bashrc line="alias l='ls -Falh'"
+    - lineinfile: dest=/home/vagrant/.bashrc line="alias ..='cd ..'"
+    - lineinfile: dest=/home/vagrant/.bashrc line='eval "$(grunt --completion=bash)"'
+    - lineinfile: dest=/home/vagrant/.bashrc line="cd /vagrant"
+
