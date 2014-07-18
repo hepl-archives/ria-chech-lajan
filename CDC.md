@@ -20,4 +20,8 @@ Je veux que les utilisateurs puissent voir et comprendre qu'un distributeur est 
 
 ## Impératifs techniques
 
-Rien de particulier, mais le résultat doit être rapide et agréable à utiliser.
+Le résultat doit être rapide et agréable à utiliser.
+
+### API Ouverte
+
+Les données que j'ai collectées sont publiques, et donc j'aimerai que l'API du projet soit ouverte, et qu'elle utilise une architecture `REST`.
