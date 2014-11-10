@@ -11,6 +11,16 @@
     "type": "git",
     "url": "http://github.com/HEPL-RIA/chech-lajan.git"
   },
+  "config": {
+    "express": {
+      "port": 53000,
+      "cache": false
+    }
+  },
   "devDependencies": {},
-  "dependencies": {}
+  "dependencies": {
+    "body-parser": "^1.9.2",
+    "express": "^4.10.1",
+    "jade": "^1.7.0"
+  }
 }
