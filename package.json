@@ -13,14 +13,21 @@
   },
   "config": {
     "express": {
-      "port": 53000,
+      "port": 34567,
       "cache": false
+    },
+    "mongodb": {
+      "host": "127.0.0.1",
+      "port": 27017,
+      "base": "chech-lajan",
+      "log": true
     }
   },
   "devDependencies": {},
   "dependencies": {
     "body-parser": "^1.9.2",
     "express": "^4.10.1",
-    "jade": "^1.7.0"
+    "jade": "^1.7.0",
+    "mongoose": "^3.8.19"
   }
 }
