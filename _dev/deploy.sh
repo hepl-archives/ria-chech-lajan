@@ -86,7 +86,7 @@ service nginx status
 # -- PROJECT DEPLOY
 cd /vagrant
 rm -rf node_modules
-npm install --unsafe-perm
+npm install --unsafe-perm --no-bin-links
 # -- END
 ELAPSED_TIME=$(($SECONDS - $START_TIME))
 clear
