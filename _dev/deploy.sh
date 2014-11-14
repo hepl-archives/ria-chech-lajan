@@ -49,7 +49,7 @@ http {
 }
 " > /etc/nginx/nginx.conf
 echo "server {
-  listen 192.168.111.222:80;
+  listen 80;
 
   access_log /var/log/nginx/chech-lajan.lan;
 
@@ -81,8 +81,7 @@ alias ...='cd ~-'
 cd /vagrant
 " >> /home/vagrant/.bashrc
 service nginx configtest
-service nginx start
-service nginx status
+service nginx restart
 # -- PROJECT DEPLOY
 cd /vagrant
 rm -rf node_modules
@@ -94,6 +93,7 @@ echo "------------------------"
 echo "----- Deploy ended -----"
 echo "------------------------"
 echo "Duration : $(($ELAPSED_TIME/60)) min $(($ELAPSED_TIME%60)) sec"
+service nginx status
 echo "-- node `node --version`"
 echo "-- npm v`npm --version`"
 echo "------------------------"
