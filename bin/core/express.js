@@ -40,5 +40,6 @@ oApp.set( "view cache", pkg.config.express.cache );
 require( root + "/routes/pages.js" ).init( oApp );
 require( root + "/routes/api/dev.js" ).init( oApp );
 require( root + "/routes/api/banks.js" ).init( oApp );
+require( root + "/routes/api/terminals.js" ).init( oApp );
 
 oApp.listen( pkg.config.express.port );

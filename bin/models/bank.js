@@ -31,6 +31,17 @@ module.exports = function( db, Mongoose, MongooseUtils ) {
 
     oSchema.plugin( MongooseUtils.paranoid );
 
+    oSchema.methods.clean = function() {
+        return {
+            "id": this.id,
+            "date": this.createdAt,
+            "name": this.name,
+            "color": this.color,
+            "icon": this.icon,
+            "url": this.url
+        };
+    };
+
     return db.model( "Bank", oSchema );
 
 };

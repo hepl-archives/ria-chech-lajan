@@ -21,18 +21,38 @@ var list = function( oRequest, oResponse ) {
         .find()
         .sort( "name" )
         .exec( function( oError, aBanks ) {
+            var aCleanedBanks = [];
             if( oError ) {
                 return api.error( oRequest, oResponse, oError.type, oError );
             }
             if( !aBanks ) {
                 aBanks = [];
             }
-            api.send( oRequest, oResponse, aBanks );
+            aBanks.forEach( function( oBank ) {
+                aCleanedBanks.push( oBank.clean() );
+            } );
+            api.send( oRequest, oResponse, aCleanedBanks );
+        } );
+};
+
+// [GET] /api/banks/:id
+
+var detail = function( oRequest, oResponse ) {
+    Bank
+        .findById( oRequest.params.id )
+        .exec( function( oError, oBank ) {
+            if( oError ) {
+                return api.error( oRequest, oResponse, oError.type, oError );
+            }
+            if( !oBank ) {
+                return api.error( oRequest, oResponse, "BANK_UNKNOWN", new Error( "BANK_UNKNOWN" ) );
+            }
+            api.send( oRequest, oResponse, oBank.clean() );
         } );
 };
 
 // Declare routes
 exports.init = function( oApp ) {
     oApp.get( "/api/banks", list );
-    // oApp.get( "/api/banks/:id", detail );
+    oApp.get( "/api/banks/:id", detail );
 };
