@@ -22,15 +22,12 @@
         <link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" href="images/startup/640x1096.png" />
     </head>
     <body>
-        <div id="map-holder">
-            <div id="gmap"></div>
-        </div>
+        <!-- gmap insertion point -->
         <div id="main">
-            <!-- <header></header> -->
-            <!-- <section id="status"></section> -->
-            <!-- <section id="result"></section> -->
-            <!-- <section id="details"></section> -->
-            <!-- <section id="aboutbox"></section> -->
+            <!-- header insertion point -->
+            <!-- result insertion point -->
+            <!-- details insertion point -->
+            <!-- aboutbox insertion point -->
         </div>
         <div id="modal">
             <a href="#">retour</a>
@@ -43,28 +40,33 @@
         </div>
 
         <script type="text/template" id="tpl-header">
-            <a href="#" id="back">
-                <span>retour</span>
-            </a>
-            <h1>
-                Cash-Cache
-            </h1>
-            <a href="#" id="about">
-                <span>paramètres</span>
-            </a>
-            <a href="#" id="problems">
-                <span>problèmes</span>
-            </a>
+            <header>
+                <a href="#" id="back">
+                    <span>retour</span>
+                </a>
+                <h1>
+                    Cash-Cache
+                </h1>
+                <a href="#" id="about">
+                    <span>paramètres</span>
+                </a>
+                <a href="#" id="problems">
+                    <span>problèmes</span>
+                </a>
+            </header>
+            <section id="status">
+                <h3></h3>
+                <a href="#" id="reload">
+                    <span>recharger</span>
+                </a>
+            </section>
         </script>
 
-        <script type="text/template" id="tpl-status">
-            <h3></h3>
-            <a href="#" id="reload">
-                <span>recharger</span>
-            </a>
+        <script type="text/template" id="tpl-map">
+            <div id="gmap"></div>
         </script>
 
-        <script type="text/template" id="tpl-result">
+        <script type="text/template" id="tpl-result-list">
             <a href="#" id="see-all">
                 <strong>Voir tous les distributeurs…</strong>
             </a>
@@ -96,10 +98,6 @@
             </div>
             <div class="problems">
                 <a href="#" id="empty_terminal">Distributeur vide ou en panne</a>
-                <a href="#" id="no_terminal">Pas de distributeur ici</a>
-                <a href="#" id="wrong_place">Mauvaise localisation sur la carte</a>
-                <a href="#" id="wrong_bank">Mauvaise banque</a>
-                <a href="#" id="duplicate_terminal">Distributeur en double</a>
             </div>
             <div class="confirm_problem">
                 <form action="javascript:void(0);">
@@ -134,7 +132,8 @@
             window.app = {
                 "id": "chech-lajan",
                 "name": "Chèch Lajan",
-                "version": "0.0.1"
+                "version": "0.0.1",
+                "api_url": "http://192.168.111.222"
             };
         </script>
         <script src="js/app.min.js"></script>

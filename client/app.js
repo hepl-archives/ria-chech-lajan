@@ -1,21 +1,25 @@
 /* Chèch Lajan
-*
-* /app.js - client entry point
-*
-* started @ 03/12/14
-*/
+ *
+ * /app.js - client entry point
+ *
+ * started @ 03/12/14
+ */
 
-( function( $, FastClick ) {
+"use strict";
 
-    "use strict";
+var $ = require( "jquery" ),
+    FastClick = require( "fastclick" ),
+    Router = require( "./router" );
 
-    window.app.now = new Date();
+window.app.now = new Date();
 
-    $( function() {
-        FastClick( document.body );
+$( function() {
+    FastClick( document.body );
 
-        console.log( window.app );
-        console.log( "ready." );
-    } );
+    console.log( window.app );
+    console.log( "ready." );
 
-} )( require( "jquery" ), require( "fastclick" ) );
+    window.app.router = new Router();
+    window.app.router.start();
+
+} );

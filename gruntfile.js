@@ -7,10 +7,10 @@ module.exports = function( grunt ) {
     grunt.loadNpmTasks( "grunt-contrib-watch" );
 
     var aBrowserifyLibs = [
-        "jquery",
         "fastclick",
-        "backbone",
+        "jquery",
         "underscore",
+        "backbone",
         "jeolok",
         "jeyo-distans"
     ];
