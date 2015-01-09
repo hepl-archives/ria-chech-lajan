@@ -42,11 +42,16 @@ module.exports = Backbone.View.extend( {
     },
 
     "clearContent": function() {
-        console.log( "TODO:clearContent" );
+        // cette methode sert à vider les vues avant d'en rajouter de nouvelles
+        this.$el.find( "#main section:not(#status)" ).remove();
     },
 
     "initList": function( TerminalsListView ) {
         this.$el.find( "#main" ).append( TerminalsListView.$el );
+    },
+
+    "initDetails": function( TerminalDetailsView ) {
+        this.$el.find( "#main" ).append( TerminalDetailsView.$el );
     }
 
 } );

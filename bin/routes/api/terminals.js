@@ -67,6 +67,21 @@ var list = function( oRequest, oResponse ) {
         } );
 };
 
+var details = function( oRequest, oResponse ) {
+    Terminal
+        .findById( oRequest.params.id )
+        .populate( "bank" )
+        .exec( function( oError, oTerminal ) {
+            if( oError ) {
+                return api.error( oRequest, oResponse, oError.type, oError );
+            }
+            if( !oTerminal ) {
+                return api.error( oRequest, oResponse, "TERMINAL_UNKNOWN" );
+            }
+            api.send( oRequest, oResponse, oTerminal.clean() );
+        } );
+};
+
 var empty = function( oRequest, oResponse ) {
     Terminal
         .findById( oRequest.params.id )
@@ -90,5 +105,6 @@ var empty = function( oRequest, oResponse ) {
 // Declare routes
 exports.init = function( oApp ) {
     oApp.get( "/api/terminals", list );
+    oApp.get( "/api/terminals/:id", details );
     oApp.put( "/api/terminals/:id/empty", empty );
 };

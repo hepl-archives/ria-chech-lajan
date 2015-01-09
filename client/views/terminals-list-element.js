@@ -38,18 +38,16 @@ module.exports = Backbone.View.extend( {
     "render": function() {
         var oBank = this.model.get( "bank" );
 
-        console.log( _tpl );
-
         this.$el
             .html( _tpl )
             .find( "a" )
                 .find( "img" )
-                    .attr( "src", "images/banks/" + oBank.icon )
-                    .attr( "alt", oBank.name )
+                    .attr( "src", oBank && oBank.icon ? "/images/banks/" + oBank.icon : "images/banks/unknown.png" )
+                    .attr( "alt", oBank && oBank.name ? oBank.name : "Inconnu" )
                     .end()
                 .find( "strong" )
-                    .css( "color", "#" + oBank.color )
-                    .text( oBank.name )
+                    .css( "color", "#" + ( oBank && oBank.color ? oBank.color : "333" ) )
+                    .text( oBank && oBank.name ? oBank.name : "Inconnu" )
                     .end()
                 .find( "span" )
                     .text( ( parseFloat( this.model.get( "distance" ) ) * 1000 ) + "m" );
@@ -59,7 +57,7 @@ module.exports = Backbone.View.extend( {
 
     "showTerminal": function( e ) {
         e.preventDefault();
-        console.log( "TODO:showTerminal" );
+        window.app.router.navigate( "terminals/details/" + this.model.get( "id" ), { trigger: true } );
     }
 
 } );
